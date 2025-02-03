@@ -14,5 +14,13 @@ if(request.getAttribute("result")!=null){
 	<% 
 }
 %>
+<form action="LoginServlet" method="post">
+<table>
+<tr><td>Email: </td><td><input type="email" name="email"></td></tr>
+<tr><td>Password: </td><td><input type="password" name="password"></td></tr>
+<tr><td> </td><td><input type="submit" value="Login"></td></tr>
+</table>
+</form>
+<a href="login.jsp">Register</a>
 </body>
 </html>
