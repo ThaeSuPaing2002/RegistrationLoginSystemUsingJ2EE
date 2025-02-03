@@ -21,6 +21,8 @@ if(request.getAttribute("result")!=null){
 <tr><td> </td><td><input type="submit" value="Login"></td></tr>
 </table>
 </form>
-<a href="login.jsp">Register</a>
+<a href="register.jsp">Register</a>
+
+</form>
 </body>
 </html>

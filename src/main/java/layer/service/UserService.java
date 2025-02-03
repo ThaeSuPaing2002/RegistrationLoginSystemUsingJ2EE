@@ -46,5 +46,24 @@ public class UserService {
 		return result;
 	}
 	
-	
+	//update user
+	public String updateValidation(String name, String email, String password,int id, String current_password) {
+		String result = null;
+		//let user update if they can enter their current password
+		User oldUserInfo = dao.getUserById(id);
+		
+		if(!BCrypt.checkpw(current_password, oldUserInfo.getPassword())) {
+			result = "Please enter the current correct password";
+		}else {
+			result = "success";
+		}
+		if(result.equals("success")) {
+			//save pw with hashed
+			String hashedpw = BCrypt.hashpw(password, BCrypt.gensalt());
+			//create new user object
+			User newUserInfo = new User(id,name,email,hashedpw);
+			dao.updateUser(newUserInfo, id);
+		}
+		return result;
+	}
 }

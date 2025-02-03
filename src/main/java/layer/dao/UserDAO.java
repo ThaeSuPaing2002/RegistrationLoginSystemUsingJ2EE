@@ -47,6 +47,7 @@ public class UserDAO {
 			rs = pst.executeQuery();
 			while(rs.next()) {
 				user = new User(
+						rs.getInt("id"),
 						rs.getString("name"),
 						rs.getString("email"),
 						rs.getString("password")
@@ -76,6 +77,7 @@ public class UserDAO {
 			rs = pst.executeQuery();
 			while(rs.next()) {
 				user = new User(
+						rs.getInt("id"),
 						rs.getString("name"),
 						rs.getString("email"),
 						rs.getString("password")
