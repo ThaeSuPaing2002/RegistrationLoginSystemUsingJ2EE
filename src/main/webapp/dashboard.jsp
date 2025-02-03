@@ -57,6 +57,11 @@ if(request.getAttribute("result")!=null){
 	<input type="text" name="id" value="<%=user.getId() %>" hidden>
 	<input type="submit" value="Logout">
 	</form>
+	
+	<form action="DeleteServlet" method="post">
+	<input type="text" name="id" value="<%=user.getId() %>" hidden>
+	<button type="submit" onclick="return confirm('are you sure?')">Delete</button>
+	</form>
 	<% 
 }else{
 	response.sendRedirect("login.jsp");
